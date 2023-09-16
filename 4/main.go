@@ -36,5 +36,4 @@ func main() {
 	fmt.Printf("len: %d, cap: %d, value: %v\n", len(s[:2]), cap(s[:2]), s[:2])
 
 	fmt.Printf("len: %d, cap: %d, value: %v\n", len(s[2:2]), cap(s[2:2]), s[2:2])
-
 }
