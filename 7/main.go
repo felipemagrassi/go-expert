@@ -7,6 +7,7 @@ type Address struct {
 	Number              int
 }
 
+// Similar to implements in Java
 type Person interface {
 	changeName(name string)
 }
