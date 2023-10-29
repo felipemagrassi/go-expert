@@ -75,6 +75,42 @@ func selectProduct(ctx context.Context, db *sql.DB, id string) (*Product, error)
 }
 
 func selectAllProducts(db *sql.DB) ([]Product, error) {
+	rows, err := db.Query("SELECT id, name, price FROM products")
+
+	if err != nil {
+		return nil, err
+	}
+
+	defer rows.Close()
+
+	var products []Product
+
+	for rows.Next() {
+		var p Product
+		err = rows.Scan(&p.ID, &p.Name, &p.Price)
+		if err != nil {
+			return nil, err
+		}
+
+		products = append(products, p)
+	}
+
+	return products, nil
+}
+
+func deleteProduct(db *sql.DB, id string) error {
+	stmt, err := db.Prepare("DELETE FROM products WHERE id = ?")
+	if err != nil {
+		return err
+	}
+	defer stmt.Close()
+
+	_, err = stmt.Exec(id)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func main() {
@@ -112,5 +148,25 @@ func main() {
 	}
 
 	fmt.Println(foundProduct.Price)
+
+	products, err := selectAllProducts(db)
+	if err != nil {
+		panic(err)
+	}
+
+	for _, p := range products {
+		fmt.Println(p.Name, p.Price, p.ID)
+	}
+
+	deleteProduct(db, product.ID)
+
+	products, err = selectAllProducts(db)
+	if err != nil {
+		panic(err)
+	}
+
+	for _, p := range products {
+		fmt.Println(p.Name, p.Price, p.ID)
+	}
 
 }
