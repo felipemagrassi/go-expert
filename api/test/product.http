@@ -1,13 +1,15 @@
 ### GET Single Product
 GET http://localhost:8081/products/d608d667-08c8-41e3-a7b0-0f23201ed6e4 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDM0MjY2MzMsInN1YiI6ImYxYzg5MjNjLTY1OTktNGI1NC1hZDhmLTJlZGNhZTM5MmZlNyJ9.4cB02_-i0vIXutooxt28kzjBo_kdGm8gVfBoZxEloRI
 
 ### GET All Products
 GET http://localhost:8081/products?page=1&limit=5&sort=name+asc HTTP/1.1
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDM0MjY0MDUsInN1YiI6ImYxYzg5MjNjLTY1OTktNGI1NC1hZDhmLTJlZGNhZTM5MmZlNyJ9.sH7ffICSNAt4B4HchoExE72OpOhwppvcnGg23Iy07Tk
 
 ### POST Create Product
 POST http://localhost:8081/products HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDM0MjY2MzMsInN1YiI6ImYxYzg5MjNjLTY1OTktNGI1NC1hZDhmLTJlZGNhZTM5MmZlNyJ9.4cB02_-i0vIXutooxt28kzjBo_kdGm8gVfBoZxEloRI
 
 {
     "name": "Product 1",
@@ -17,6 +19,7 @@ Content-Type: application/json
 ### PUT Update Product
 PUT http://localhost:8081/products/d608d667-08c8-41e3-a7b0-0f23201ed6e4 HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDM0MjY2MzMsInN1YiI6ImYxYzg5MjNjLTY1OTktNGI1NC1hZDhmLTJlZGNhZTM5MmZlNyJ9.4cB02_-i0vIXutooxt28kzjBo_kdGm8gVfBoZxEloRI
 
 {
     "name": "Product 1",
@@ -25,4 +28,5 @@ Content-Type: application/json
 
 ### DELETE Delete Product
 DELETE http://localhost:8081/products/d696484b-1183-4c5e-a9a1-38cb7b425fa1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDM0MjY2MzMsInN1YiI6ImYxYzg5MjNjLTY1OTktNGI1NC1hZDhmLTJlZGNhZTM5MmZlNyJ9.4cB02_-i0vIXutooxt28kzjBo_kdGm8gVfBoZxEloRI
 
