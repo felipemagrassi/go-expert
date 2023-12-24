@@ -10,6 +10,7 @@ import (
 
 	"github.com/felipemagrassi/go-expert/api/configs"
 	_ "github.com/felipemagrassi/go-expert/api/docs"
+
 	"github.com/felipemagrassi/go-expert/api/internal/entity"
 	"github.com/felipemagrassi/go-expert/api/internal/infra/database"
 	"github.com/felipemagrassi/go-expert/api/internal/infra/handlers"
@@ -19,27 +20,16 @@ import (
 	"gorm.io/gorm"
 )
 
-// @title           Swagger Example API
+// @title           Go Expert API Example
 // @version         1.0
-// @description     This is a sample server celler server.
+// @description     Product API with auhtentication
 // @termsOfService  http://swagger.io/terms/
-
-// @contact.name   API Support
-// @contact.url    http://www.swagger.io/support
-// @contact.email  support@swagger.io
-
-// @license.name  Apache 2.0
-// @license.url   http://www.apache.org/licenses/LICENSE-2.0.html
 
 // @host      localhost:8081
 // @BasePath  /
-
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header
 // @name Authorization
-
-// @externalDocs.description  OpenAPI
-// @externalDocs.url          https://swagger.io/resources/open-api/
 
 func main() {
 	configs, err := configs.LoadConfig(".")
@@ -81,7 +71,7 @@ func main() {
 		r.Post("/auth", userHandler.GetJWT)
 	})
 
-	r.Get("/docs/*", httpSwagger.Handler(httpSwagger.URL("http://localhost:8081/swagger/doc.json")))
+	r.Get("/docs/*", httpSwagger.Handler(httpSwagger.URL("http://localhost:8081/docs/doc.json")))
 
 	http.ListenAndServe(":8081", r)
 }
