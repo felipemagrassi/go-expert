@@ -10,7 +10,6 @@ func worker(workerId int, data chan int) {
 		fmt.Printf("Worker %d got %d\n", workerId, x)
 		time.Sleep(time.Second)
 	}
-
 }
 
 func main() {
