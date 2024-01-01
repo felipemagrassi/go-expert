@@ -30,8 +30,10 @@ func main() {
 	}
 
 	categoryDb := database.NewCategory(db)
+	courseDb := database.NewCourse(db)
 	resolver := &graph.Resolver{
 		CategoryDB: categoryDb,
+		CourseDB:   courseDb,
 	}
 
 	srv := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: resolver}))
