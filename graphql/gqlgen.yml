@@ -76,10 +76,10 @@ autobind:
 models:
   Category:
     model:
-      - github.com/felipemagrassi/graphql/graph/model.Category
+      - github.com/felipemagrassi/go-expert/graphql/graph/model.Category
   Course:
     model:
-      - github.com/felipemagrassi/graphql/graph/model.Course
+      - github.com/felipemagrassi/go-expert/graphql/graph/model.Course
   ID:
     model:
       - github.com/99designs/gqlgen/graphql.ID
