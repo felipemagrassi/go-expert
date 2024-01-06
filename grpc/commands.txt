@@ -1,0 +1,7 @@
+```bash
+evans --proto proto/course_category.proto - Initialize evans client with course_category proto
+```
+
+```bash
+protoc --go_out=. --go-grpc_out=. proto/course_category.proto - Generate go code from proto
+```
