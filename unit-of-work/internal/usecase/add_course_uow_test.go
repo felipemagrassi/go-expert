@@ -27,7 +27,7 @@ func TestAddCourseUow(t *testing.T) {
 	input := InputUseCase{
 		CategoryName:     "Category 1",
 		CourseName:       "Course 1",
-		CourseCategoryID: 10,
+		CourseCategoryID: 1,
 	}
 
 	ctx := context.Background()

@@ -66,6 +66,7 @@ func (u *Uow) Do(ctx context.Context, fn func(uow *Uow) error) error {
 	}
 
 	u.Tx = tx
+	fmt.Println("Running transaction ...")
 	err = fn(u)
 	if err != nil {
 		errRb := u.Rollback()
